@@ -62,9 +62,14 @@ class Array
       end
     end
 
-    book.write(xls_report)
+    if options[:path]
+      book.write(options[:path])
+    else
+      book.write(xls_report)
 
-    xls_report.string
+      xls_report.string
+    end
+
   end
 
 end
